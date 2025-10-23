@@ -1,6 +1,7 @@
 package com.example.login_ui;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,6 +27,21 @@ public class MainActivity extends AppCompatActivity {
         Button login=findViewById(R.id.button);
         TextView forget=findViewById(R.id.textView2);
         TextView dont=findViewById(R.id.textView);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email_text = email.getText().toString();
+                String password_text = password.getText().toString();
+
+                if (email_text.equals("madeel466466@gmail.com") && password_text.equals("2126")) {
+                    setContentView(R.layout.second_activity);
+                } else {
+                    email.setError("Invalid email or password");
+                    password.setError("Invalid email or password");
+                }
+            }}
+        );
 
 
 
